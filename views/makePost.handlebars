@@ -1,0 +1,54 @@
+<div class="container" id="makePostContainer">
+
+	<div class="row">
+
+		<div class="col-md-8 col-md-offset-2">
+
+			{{#each userDataId }}
+			<div class="col-sm-9 text-secondary">
+				<input disabled name="userID" class="form-control" id="secretUserId" value="{{test}}">
+			</div>
+			{{/each}}
+
+			{{#each userDataName }}
+			<div class='userName'>
+				<h1>{{test}}</h1>
+			</div>
+
+			{{/each}}
+
+			<h1>Create post</h1>
+
+			<form action="">
+
+
+
+
+
+				<div class="form-group">
+					<label for="title">Title <span class="require"></span></label>
+					<input type="text" id="postTitle" class="form-control" name="title">
+				</div>
+
+				<div class="form-group">
+					<label for="description">Content</label>
+					<textarea rows="5" id="postContent" class="form-control" name="description"></textarea>
+				</div>
+
+
+
+				<div class="form-group">
+					<button type="submit" id="makePostBtn" class="btn btn-danger">
+						Create
+					</button>
+
+				</div>
+
+			</form>
+		</div>
+
+	</div>
+</div>
+</div>
+</div>
+</div>

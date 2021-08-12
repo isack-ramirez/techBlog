@@ -1,0 +1,41 @@
+
+
+body{
+    font-family: monospace;
+  }
+  
+  #techBible{
+    background-color:rgb(102, 18, 18);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  #makePostContainer{
+    background-color: rgb(102, 18, 18);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  #blogJumbo{
+    background-color: rgb(158, 22, 22);
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    
+  }
+  
+  
+  
+  .logForm{
+    margin: auto;
+    max-width: 40vw;
+    width: 100%;
+    padding: 15px;
+  }
+  
+  
+  
