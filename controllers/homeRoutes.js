@@ -43,52 +43,55 @@ router.get('/login', (req, res) => {
 
 
 router.get('/makePost', withAuth, async (req, res) => {
-    
-    thisUserId=req.session.thisUser.id;
-    thisUserName=req.session.thisUser.username;
+
+    thisUserId = req.session.thisUser.id;
+    thisUserName = req.session.thisUser.username;
     console.log(thisUserId);
 
     res.render('makePost', {
         loggedIn: req.session.loggedIn,
         thisUser: req.session.thisUser,
-        userDataId: [{test: thisUserId}],
-        userDataName: [{test: thisUserName}]
+        userDataId: [{ test: thisUserId }],
+        userDataName: [{ test: thisUserName }]
 
     })
-})
+});
 
 
 router.get('/myPosts', withAuth, async (req, res) => {
-    console.log('*^^^^^^^^^^^^^^^^^^^^^^******');
-    console.log(req.session);
 
 
-    posts.findAll({
+
+    var thisUsersPosts = posts.findAll({
         attributes: [
-            'title', 'body'
+            'title', 'body',
 
         ],
-        //    where: {
-        //     user_id : req.session.thisUser.id,
-        //    }
+        where: {
+            user_id: req.session.thisUser.id,
+        }
+
     })
+
+
         .then(function (data) {
-            console.log('&&&&&&&&&&&&&&&&&&&')
+
+
             console.log(data)
             res.render('myPosts', {
 
                 loggedIn: req.session.loggedIn,
                 thisUser: req.session.thisUser,
                 myPosts: data,
-                testPosts: [{test:'human'},{test:'dogs'}]
-            
+
+
             })
 
         })
         .catch(err => {
             console.log(err);
             res.status(500).json(err);
-          });
+        });
 })
 
 

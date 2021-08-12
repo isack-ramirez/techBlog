@@ -28,12 +28,16 @@ router.post('/', withAuth, async (req, res) => {
     posts.create({
       title: req.body.title,
       body: req.body.body,
-      user_id: req.session.user_id
+      user_id: req.body.user_id
     })
       .catch(err => {
         console.log(err);
         res.status(500).json(err);
       });
 });
+
+
+
+
 
 module.exports = router;

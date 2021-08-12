@@ -2,10 +2,12 @@ const postHandler = async (event) => {
     event.preventDefault();
     const title = document.querySelector('#postTitle').value.trim();
     const body = document.querySelector('#postContent').value.trim();
-    const user_id = document.querySelector('#secretUserId').value.trim();
+    var user_id = document.querySelector('#secretUserId').value.trim();
     
 
-  
+    var temp = parseInt(user_id);
+    user_id = temp;
+    console.log(typeof user_id);
 
     if (title && body && user_id ) {
         console.log(user_id);
